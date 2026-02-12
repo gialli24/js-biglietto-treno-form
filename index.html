@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>js-biglietto-treno-form</title>
+    <title>Viaggia con Noi !</title>
 </head>
 <body>
     
+    <!-- Full Name -->
+    <input type="text" id="fullName" placeholder="Mario Rossi">
+
+    <!-- Route KM -->
+    <input type="number" id="routeKm" placeholder="32">
+
+    <!-- Age Group -->
+    <select id="ageGroup">
+        <option value="" selected disabled>Seleziona una fascia d'età</option>
+        <option value="minorenne">Minorenne</option>
+        <option value="maggiorenne">Maggiorenne</option>
+        <option value="over65">Over 65</option>
+    </select>
+
+    <!-- Generate Ticket Button -->
+    <button id="generateTicketBtn">Genera</button>
+
     <script src="./main.js"></script>
 </body>
 </html>
