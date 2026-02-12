@@ -4,54 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viaggia con Noi !</title>
+
+    <!-- Bootstrap 5.3 CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+    <header class="app-header">
+        <div class="container">
+            <nav class="navbar bg-body-tertiary">
+                <div class="d-flex align-items-center">
+                    <img src="https://thumbs.dreamstime.com/b/train-logo-concept-icon-illustration-design-170455146.jpg" alt="App Logo" height="60px">
+                    <h1>BoolTrain</h1>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- /.app-header -->
     
-    <form>
-        <!-- Full Name -->
-        <input type="text" id="fullName" placeholder="Mario Rossi" required>
+    <main class="app-main">
+        <section class="ticket-form d-flex align-items-center p-5 mb-5">
+            <div class="container">
+                <form class="d-flex flex-column flex-md-row align-items-md-end rounded-4 p-4">
+                    <!-- Full Name -->
+                    <div class="m-3 flex-grow-1">
+                        <label for="fullName" class="form-label">Nome e Cognome</label>
+                        <input type="text" class="form-control" id="fullName" required>
+                    </div>
 
-        <!-- Route KM -->
-        <input type="number" id="routeKm" placeholder="32" required>
+                    <!-- Route KM -->
+                    <div class="m-3 flex-grow-1">
+                        <label for="routeKm" class="form-label">Km da Percorrere</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="routeKm">
+                            <span class="input-group-text">km</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Age Group -->
+                    <div class="m-3 flex-grow-1">
+                        <label for="ageGroup" class="form-label">Fascia d'Età</label>
+                        <select class="form-select"  id="ageGroup">
+                            <option value="" selected disabled>Seleziona una fascia d'età</option>
+                            <option value="minorenne">Minorenne</option>
+                            <option value="standard">Maggiorenne</option>
+                            <option value="over65">Over 65</option>
+                        </select>
+                    </div>
 
-        <!-- Age Group -->
-        <select id="ageGroup" required>
-            <option value="" selected disabled>Seleziona una fascia d'età</option>
-            <option value="minorenne">Minorenne</option>
-            <option value="standard">Maggiorenne</option>
-            <option value="over65">Over 65</option>
-        </select>
+                    <!-- Generate Ticket Button -->
+                    <div class="m-3">
+                        <button type="submit" class="btn btn-primary" id="generateTicketBtn">Genera</button>
+                    </div>
+                </form>
+            </div>
+        </section>
 
-        <!-- Generate Ticket Button -->
-        <button type="submit" id="generateTicketBtn">Genera</button>
-    </form>
+        <section class="ticket">
+            <div class="container">
+                <div class="shadow px-4 py-5 rounded-4">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 id="ticketOwner">Nome e Cognome</h3>
+                        <span id="cpCode" class="text-secondary">00000</span>
+                    </div>
 
-    <!-- Output section -->
-    <section id="outputCard">
-        <h2>Info Biglietto</h2>
+                    <hr class="my-5">
 
-        <h3 id="ticketOwner">Nome e Cognome</h3>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Offerta</th>
-                    <th>Carrozza</th>
-                    <th>Codice CP</th>
-                    <th>Prezzo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="rateType">Offerta</td>
-                    <td id="coachNumber">Carrozza</td>
-                    <td id="cpCode">Codice CP</td>
-                    <td id="ticketPrice">Prezzo</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+                    <div class="row row-cols-3">
+                        <div class="col">
+                            <h3>Offerta</h3>
+                            <span id="rateType">Offerta</span>
+                        </div>
+                        <div class="col">
+                            <h3>Carrozza</h3>
+                            <span id="coachNumber">Carrozza</span>
+                        </div>
+                        <div class="col">
+                            <h3>Prezzo</h3>
+                            <span id="ticketPrice">Prezzo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.ticket -->
+    </main>
+    <!-- /.app-main -->
 
-    <script src="./main.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

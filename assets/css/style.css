@@ -1,0 +1,13 @@
+.ticket-form {
+    min-height: 350px;
+
+    background-image: url(../img/form-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.ticket-form form {
+    background-color: rgba(255, 255, 255, 0.493);
+    backdrop-filter: blur(5px);
+}
