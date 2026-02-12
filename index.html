@@ -7,22 +7,50 @@
 </head>
 <body>
     
-    <!-- Full Name -->
-    <input type="text" id="fullName" placeholder="Mario Rossi">
+    <form>
+        <!-- Full Name -->
+        <input type="text" id="fullName" placeholder="Mario Rossi" required>
 
-    <!-- Route KM -->
-    <input type="number" id="routeKm" placeholder="32">
+        <!-- Route KM -->
+        <input type="number" id="routeKm" placeholder="32" required>
 
-    <!-- Age Group -->
-    <select id="ageGroup">
-        <option value="" selected disabled>Seleziona una fascia d'età</option>
-        <option value="minorenne">Minorenne</option>
-        <option value="maggiorenne">Maggiorenne</option>
-        <option value="over65">Over 65</option>
-    </select>
+        <!-- Age Group -->
+        <select id="ageGroup" required>
+            <option value="" selected disabled>Seleziona una fascia d'età</option>
+            <option value="minorenne">Minorenne</option>
+            <option value="standard">Maggiorenne</option>
+            <option value="over65">Over 65</option>
+        </select>
 
-    <!-- Generate Ticket Button -->
-    <button id="generateTicketBtn">Genera</button>
+        <!-- Generate Ticket Button -->
+        <button type="submit" id="generateTicketBtn">Genera</button>
+    </form>
+
+    <!-- Output section -->
+    <section id="outputCard">
+        <h2>Info Biglietto</h2>
+
+        <h3 id="ticketOwner">Nome e Cognome</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Offerta</th>
+                    <th>Carrozza</th>
+                    <th>Codice CP</th>
+                    <th>Prezzo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="rateType">Offerta</td>
+                    <td id="coachNumber">Carrozza</td>
+                    <td id="cpCode">Codice CP</td>
+                    <td id="ticketPrice">Prezzo</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
     <script src="./main.js"></script>
 </body>
